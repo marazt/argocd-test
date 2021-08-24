@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argocd-test
+  template:
+    metadata:
+      labels:
+        app: argocd-test
+    spec:
+      containers:
+      - name: argocd-test
+        image: alpine:3.10
+        tty: true
+        stdin: true
+        env:
+          - name: foo
+            value: bar
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "100m"

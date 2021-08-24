@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-test
+spec:
+  template:
+    spec:
+      containers:
+      - name: argocd-test
+        env:
+          - name: foo
+            value: we-are-in-prod

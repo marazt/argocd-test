@@ -9,4 +9,6 @@ spec:
       - name: argocd-test
         env:
           - name: foo
-            value: we-are-in-dev
+            value: "we-are-in-dev"
+          - name: version
+            value: "2"
